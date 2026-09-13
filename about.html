@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About ThrottleBox - the team behind the rate limiter</title>
+    <meta
+      name="description"
+      content="Why we built ThrottleBox: the founding story, our milestones, the small distributed team behind it and the values that shape how we ship."
+    />
+    <meta property="og:title" content="About ThrottleBox" />
+    <meta
+      property="og:description"
+      content="A small distributed team building drop-in API rate limiting, and the incident that started it."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <site-nav></site-nav>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">About us</p>
+            <h1>We build the rate limiter we kept rewriting.</h1>
+            <p class="lede">
+              Our mission is simple: no engineering team should have to build, own and debug
+              traffic protection that has nothing to do with their actual product.
+            </p>
+          </div>
+
+          <div class="split">
+            <div>
+              <h2>How it started</h2>
+              <p>
+                In 2023 two of us were on call for a payments API when a partner's retry loop went
+                wrong and sent 40 million requests in nine hours. Nothing was malicious. Nothing
+                was even unusual - just a backoff bug on their side. Our bill was not amused.
+              </p>
+              <p>
+                We spent the following quarter building the thing that would have caught it: per
+                key limits, burst allowances, and a view that shows which caller is responsible
+                while it is still happening. Every other team we described it to asked for a copy.
+              </p>
+              <p>
+                So we turned it into a product. ThrottleBox has been used in production since
+                2024, and it is still shaped by the same rule - if a policy cannot be read and
+                understood by the engineer on call at 3am, it is the wrong policy.
+              </p>
+            </div>
+            <figure class="split__media photo-overlay" style="margin: 0">
+              <img
+                src="images/stock/team.jpg"
+                alt="Two people reviewing work together on a laptop during a late evening call"
+                width="1024"
+                height="680"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- MILESTONES -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Milestones</p>
+            <h2>Five years, condensed.</h2>
+          </div>
+          <ol class="timeline" style="list-style: none; margin: 0">
+            <li>
+              <time datetime="2023-10">October 2023</time>
+              <h3>The 40-million-request night</h3>
+              <p>The incident that started it, and the first prototype written the week after.</p>
+            </li>
+            <li>
+              <time datetime="2024-03">March 2024</time>
+              <h3>First external user</h3>
+              <p>Ledgerly puts the prototype in front of their public API in monitor-only mode.</p>
+            </li>
+            <li>
+              <time datetime="2024-11">November 2024</time>
+              <h3>Edge rollout</h3>
+              <p>Limit evaluation moves to 38 regions; median decision time drops to 0.4ms.</p>
+            </li>
+            <li>
+              <time datetime="2025-06">June 2025</time>
+              <h3>Self-hosted edition</h3>
+              <p>A single container for teams with data residency requirements.</p>
+            </li>
+            <li>
+              <time datetime="2026-04">April 2026</time>
+              <h3>8,000 developers</h3>
+              <p>Four billion requests screened a month, still a team of seven.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Team</p>
+            <h2>Seven people, six time zones.</h2>
+            <p>Hover a card (or tab to it) to read the bio.</p>
+          </div>
+          <div class="team-grid">
+            <article class="flip" tabindex="0">
+              <div class="flip__inner">
+                <div class="flip__face">
+                  <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Maaz%20Bin%20Asif" alt="Illustrated avatar of Maaz Bin Asif" width="72" height="72" loading="lazy" />
+                  <h3>Maaz Bin Asif</h3>
+                  <p class="quote__role">Co-founder, CEO</p>
+                </div>
+                <div class="flip__face flip__face--back">
+                  <p>Was on call the night of the incident. Writes most of the policy language docs and answers support tickets on Fridays.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip" tabindex="0">
+              <div class="flip__inner">
+                <div class="flip__face">
+                  <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Tomas%20Neruda" alt="Illustrated avatar of Tomas Neruda" width="72" height="72" loading="lazy" />
+                  <h3>Tomas Neruda</h3>
+                  <p class="quote__role">Co-founder, CTO</p>
+                </div>
+                <div class="flip__face flip__face--back">
+                  <p>Built the first counter in a weekend. Now owns the edge runtime and is unreasonably proud of the 0.4ms median.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip" tabindex="0">
+              <div class="flip__inner">
+                <div class="flip__face">
+                  <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Grace%20Wanjiru" alt="Illustrated avatar of Grace Wanjiru" width="72" height="72" loading="lazy" />
+                  <h3>Grace Wanjiru</h3>
+                  <p class="quote__role">Head of Engineering</p>
+                </div>
+                <div class="flip__face flip__face--back">
+                  <p>Joined from a payments platform. Keeps the roadmap honest and the changelog weekly.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip" tabindex="0">
+              <div class="flip__inner">
+                <div class="flip__face">
+                  <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Marco%20Bianchi" alt="Illustrated avatar of Marco Bianchi" width="72" height="72" loading="lazy" />
+                  <h3>Marco Bianchi</h3>
+                  <p class="quote__role">Developer experience</p>
+                </div>
+                <div class="flip__face flip__face--back">
+                  <p>Writes the SDKs and the quickstart. If a code sample does not run on the first paste, he treats it as a bug.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUES -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Values</p>
+            <h2>Three rules we actually apply.</h2>
+          </div>
+          <div class="values">
+            <article class="card card--hover">
+              <h3>Readable beats clever</h3>
+              <p>If a policy needs a diagram to explain, we redesign the policy.</p>
+            </article>
+            <article class="card card--hover">
+              <h3>Monitor before you block</h3>
+              <p>Every feature ships with a dry-run mode. Surprising customers is a defect.</p>
+            </article>
+            <article class="card card--hover">
+              <h3>Boring reliability</h3>
+              <p>We publish uptime and post-incident reviews, including the embarrassing ones.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cta-banner">
+            <h2>Want to work on this with us?</h2>
+            <p>We hire slowly and remotely. Say hello and tell us what you have broken lately.</p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="contact.html">Get in touch</a>
+              <a class="btn btn--secondary" href="changelog.html">Read the changelog</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>
