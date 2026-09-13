@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact ThrottleBox - talk to the team</title>
+    <meta
+      name="description"
+      content="Send the ThrottleBox team a message, see where our distributed team works from, and read support answers on response times, community and status."
+    />
+    <meta property="og:title" content="Contact ThrottleBox" />
+    <meta
+      property="og:description"
+      content="Message the team, check support answers, and see where our remote-first team is based."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <site-nav></site-nav>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Contact</p>
+            <h1>Tell us what you are protecting.</h1>
+            <p class="lede">
+              Real engineers answer this form - usually the person who built the thing you are
+              asking about. One business day, every message.
+            </p>
+          </div>
+
+          <div class="contact-layout">
+            <!-- FORM -->
+            <div>
+              <form id="contact-form" novalidate>
+                <div class="field">
+                  <label for="name">Full name</label>
+                  <input type="text" id="name" name="name" autocomplete="name" placeholder="Maaz Bin Asif" />
+                  <span class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
+                  <label for="email">Work email</label>
+                  <input type="email" id="email" name="email" autocomplete="email" placeholder="you@company.com" />
+                  <span class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
+                  <label for="company">Company <span style="color: var(--muted); font-weight: 400">(optional)</span></label>
+                  <input type="text" id="company" name="company" autocomplete="organization" placeholder="Orbitly" />
+                  <span class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
+                  <label for="topic">What is this about?</label>
+                  <select id="topic" name="topic">
+                    <option value="">Choose a topic…</option>
+                    <option value="sales">Pricing or Enterprise plan</option>
+                    <option value="support">Technical support</option>
+                    <option value="integration">Request an integration</option>
+                    <option value="other">Something else</option>
+                  </select>
+                  <span class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Roughly how much traffic do you handle, and what is going wrong today?"></textarea>
+                  <p class="hint">At least 20 characters, so we can give you a useful answer.</p>
+                  <span class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <button class="btn btn--primary" type="submit">Send message</button>
+              </form>
+
+              <div class="contact-channels">
+                <p class="mono" style="font-size: var(--fs-small); margin: 0">Other ways to reach us</p>
+                <a href="mailto:maaz.asif@maaz.codes">maaz.asif@maaz.codes - technical questions</a>
+                <a href="contact.html">community.throttlebox.dev - public forum, answered daily</a>
+                <a href="contact.html">status.throttlebox.dev - incidents and uptime history</a>
+              </div>
+            </div>
+
+            <!-- MAP -->
+            <div>
+              <h2>Where we are</h2>
+              <p>Remote-first, no head office. Hover a pin to see the city.</p>
+              <div class="map-wrap" id="map-wrap">
+                <span class="map-tooltip" id="map-tooltip" role="status"></span>
+                <svg viewBox="0 0 400 200" role="img" aria-label="World map showing team locations in Lisbon, Karachi, Nairobi, Berlin and Toronto">
+                  <!-- stylised landmasses -->
+                  <path class="map-land" d="M40 60 L90 45 L120 60 L110 95 L70 110 L45 95 Z" />
+                  <path class="map-land" d="M85 115 L110 110 L120 145 L100 180 L85 150 Z" />
+                  <path class="map-land" d="M165 45 L215 38 L240 55 L225 80 L185 85 L165 70 Z" />
+                  <path class="map-land" d="M180 90 L225 88 L235 130 L205 165 L185 130 Z" />
+                  <path class="map-land" d="M245 40 L340 35 L360 70 L320 105 L260 95 L240 65 Z" />
+                  <path class="map-land" d="M320 140 L360 135 L365 165 L330 170 Z" />
+
+                  <circle class="map-pin" cx="150" cy="72" r="5" data-city="Lisbon, Portugal" tabindex="0" role="button" aria-label="Lisbon, Portugal" />
+                  <circle class="map-pin" cx="292" cy="78" r="5" data-city="Karachi, Pakistan" tabindex="0" role="button" aria-label="Karachi, Pakistan" />
+                  <circle class="map-pin" cx="222" cy="112" r="5" data-city="Nairobi, Kenya" tabindex="0" role="button" aria-label="Nairobi, Kenya" />
+                  <circle class="map-pin" cx="196" cy="52" r="5" data-city="Berlin, Germany" tabindex="0" role="button" aria-label="Berlin, Germany" />
+                  <circle class="map-pin" cx="92" cy="62" r="5" data-city="Toronto, Canada" tabindex="0" role="button" aria-label="Toronto, Canada" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUPPORT FAQ -->
+      <aside class="section section--tight" id="support-faq" aria-labelledby="support-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Support</p>
+            <h2 id="support-title">Before you write in.</h2>
+          </div>
+          <div class="accordion" data-accordion>
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="sf-1">
+                  How quickly will I get a reply?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="sf-1">
+                One business day on Pro, and usually much faster. Enterprise customers get a
+                shared Slack channel with a four hour response target during their business hours.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="sf-2">
+                  Is there a community I can ask in first?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="sf-2">
+                Yes - the public forum is free for everyone, including Free plan users, and our
+                engineers answer there every weekday.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="sf-3">
+                  Something looks broken. Is it you or me?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="sf-3">
+                Check the status page first: it shows live edge health per region and a full
+                incident history, including post-incident reviews.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="sf-4">
+                  Do you offer migration help?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="sf-4">
+                For anything above 50 million requests a month we will translate your existing
+                limiter config into a ThrottleBox policy for you, free, before you commit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/form-validation.js"></script>
+    <script src="js/faq-accordion.js"></script>
+    <script src="js/contact-map.js"></script>
+  </body>
+</html>
