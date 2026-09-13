@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThrottleBox - Stop API abuse before it costs you</title>
+    <meta
+      name="description"
+      content="ThrottleBox is drop-in API rate limiting and abuse protection: per-key limits, live traffic visibility and instant blocking, without writing your own throttling logic."
+    />
+    <meta property="og:title" content="ThrottleBox - Stop API abuse before it costs you" />
+    <meta
+      property="og:description"
+      content="Drop-in API rate limiting and abuse protection for teams who would rather ship features than build throttling logic."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <site-nav></site-nav>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <p class="eyebrow">API rate limiting &amp; abuse protection</p>
+            <h1>Stop API abuse before it costs you.</h1>
+            <p class="lede">
+              ThrottleBox sits in front of your API, throttles bad actors automatically and
+              shows you exactly who is hammering which endpoint - so a single scraper never
+              turns into a 3am incident and a five-figure bill.
+            </p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="docs.html#quickstart">Start in 5 minutes</a>
+              <a class="btn btn--secondary" href="product.html">See pricing</a>
+            </div>
+          </div>
+          <figure class="hero__media photo-overlay" style="margin: 0">
+            <span class="hero__badge"><span class="status-dot"></span> Edge network operational</span>
+            <img
+              src="images/stock/hero-workspace.jpg"
+              alt="A developer reviewing API traffic logs on a monitor in a dimly lit workspace"
+              width="1280"
+              height="960"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- SOCIAL PROOF -->
+      <section class="proof" aria-label="Usage statistics and integrations">
+        <div class="container proof__row">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num" data-count-to="8200" data-suffix="+">0</div>
+              <div class="stat__label">Developers protecting APIs</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count-to="4.1" data-decimals="1" data-suffix="B">0</div>
+              <div class="stat__label">Requests screened monthly</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num" data-count-to="99.99" data-decimals="2" data-suffix="%">0</div>
+              <div class="stat__label">Edge uptime, trailing 90 days</div>
+            </div>
+          </div>
+          <div class="badge-row" aria-label="Integrates with">
+            <span class="monogram" title="Nimbus">NB</span>
+            <span class="monogram" title="Orbitly">OR</span>
+            <span class="monogram" title="Ledgerly">LG</span>
+            <span class="monogram" title="Wavepoint">WP</span>
+            <span class="monogram" title="Cronly">CR</span>
+            <span class="monogram" title="Fluxbase">FB</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM → SOLUTION -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">The problem</p>
+            <h2>Hand-rolled rate limiting breaks at the worst possible time.</h2>
+            <p>
+              Most teams start with a counter in Redis. It works until traffic is spiky, until
+              you run more than one instance, until someone rotates through 400 IP addresses, or
+              until you need to explain to a customer why their legitimate burst got blocked.
+              Then it becomes a side project nobody owns.
+            </p>
+            <p>
+              ThrottleBox replaces that counter with a policy you can read: limits per key, per
+              endpoint and per plan, enforced at the edge in under a millisecond, with a live
+              view of every decision it made and a one-click override when you get it wrong.
+            </p>
+          </div>
+
+          <!-- BENTO FEATURES -->
+          <div class="bento">
+            <article class="bento__tile bento__tile--wide">
+              <div class="photo-overlay">
+                <img
+                  src="images/stock/dashboard.jpg"
+                  alt="Traffic analytics chart showing request volume over time"
+                  width="1024"
+                  height="820"
+                  loading="lazy"
+                />
+              </div>
+              <div class="bento__body">
+                <h3>See the spike while it is happening</h3>
+                <p>
+                  Live traffic view grouped by API key, endpoint and country. Sort by rejected
+                  requests and you have your answer in one click, not one afternoon of grepping.
+                </p>
+              </div>
+            </article>
+
+            <article class="bento__tile">
+              <div class="photo-overlay">
+                <img
+                  src="images/stock/fiber.jpg"
+                  alt="Macro photo of glowing fibre optic cables"
+                  width="1024"
+                  height="680"
+                  loading="lazy"
+                />
+              </div>
+              <div class="bento__body">
+                <h3>Sub-millisecond at the edge</h3>
+                <p>Limits are evaluated in 38 regions, so protection never costs you latency.</p>
+              </div>
+            </article>
+
+            <article class="bento__tile">
+              <div class="photo-overlay">
+                <img
+                  src="images/stock/server-room.jpg"
+                  alt="Dark server room corridor lined with racks"
+                  width="1024"
+                  height="680"
+                  loading="lazy"
+                />
+              </div>
+              <div class="bento__body">
+                <h3>Policies as plain config</h3>
+                <p>One YAML block per plan tier. Version it, review it, roll it back.</p>
+              </div>
+            </article>
+
+            <article class="bento__tile bento__tile--wide">
+              <div class="photo-overlay">
+                <img
+                  src="images/stock/terminal.jpg"
+                  alt="Terminal window showing streaming request logs"
+                  width="1024"
+                  height="680"
+                  loading="lazy"
+                />
+              </div>
+              <div class="bento__body">
+                <h3>Block abuse, not customers</h3>
+                <p>
+                  Burst allowances, soft limits and per-key overrides mean a paying customer with
+                  a busy Monday gets a warning header, while a scraper gets a 429.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">How it works</p>
+            <h2>Three steps, one afternoon.</h2>
+          </div>
+          <ol class="steps" style="list-style: none; padding: 0; margin: 0">
+            <li class="step">
+              <p class="step__n">01</p>
+              <h3>Point your traffic at us</h3>
+              <p>Change one DNS record, or install the middleware package for your framework.</p>
+            </li>
+            <li class="step">
+              <p class="step__n">02</p>
+              <h3>Describe your limits</h3>
+              <p>Requests per minute, burst size and quota, per plan tier or per endpoint.</p>
+            </li>
+            <li class="step">
+              <p class="step__n">03</p>
+              <h3>Watch and tune</h3>
+              <p>Start in monitor-only mode, review what would have been blocked, then enforce.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Testimonials</p>
+            <h2>What teams say after the first incident it caught.</h2>
+          </div>
+          <div class="quotes">
+            <figure class="card card--hover" style="margin: 0">
+              <blockquote style="margin: 0">
+                <p>
+                  “We had a scraper pulling our catalogue every four seconds for a week before we
+                  noticed. ThrottleBox flagged the same pattern in under an hour.”
+                </p>
+              </blockquote>
+              <figcaption class="quote__who">
+                <img
+                  src="https://api.dicebear.com/9.x/notionists/svg?seed=Amara%20Okafor"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+                <span>
+                  <span class="quote__name">Amara Okafor</span><br />
+                  <span class="quote__role">Platform lead, Ledgerly</span>
+                </span>
+              </figcaption>
+            </figure>
+
+            <figure class="card card--hover" style="margin: 0">
+              <blockquote style="margin: 0">
+                <p>
+                  “I deleted 400 lines of Redis counter logic and two on-call runbooks. The config
+                  file now fits on one screen and the whole team can read it.”
+                </p>
+              </blockquote>
+              <figcaption class="quote__who">
+                <img
+                  src="https://api.dicebear.com/9.x/notionists/svg?seed=Daniyal%20Raza"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+                <span>
+                  <span class="quote__name">Daniyal Raza</span><br />
+                  <span class="quote__role">Backend engineer, Wavepoint</span>
+                </span>
+              </figcaption>
+            </figure>
+
+            <figure class="card card--hover" style="margin: 0">
+              <blockquote style="margin: 0">
+                <p>
+                  “Monitor-only mode sold it internally. We shipped enforcement two weeks later
+                  with real numbers instead of a guess about who we might break.”
+                </p>
+              </blockquote>
+              <figcaption class="quote__who">
+                <img
+                  src="https://api.dicebear.com/9.x/notionists/svg?seed=Lena%20Fischer"
+                  alt=""
+                  width="40"
+                  height="40"
+                  loading="lazy"
+                />
+                <span>
+                  <span class="quote__name">Lena Fischer</span><br />
+                  <span class="quote__role">CTO, Orbitly</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLOSING CTA -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cta-banner">
+            <h2>Put a limit on it today.</h2>
+            <p>Free tier covers 100,000 requests a month. No card, no sales call.</p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="docs.html#quickstart">Read the quickstart</a>
+              <a class="btn btn--secondary" href="contact.html">Talk to the team</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
