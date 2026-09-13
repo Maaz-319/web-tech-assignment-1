@@ -1,5 +1,7 @@
 # ThrottleBox - static marketing site
 
+Deployed: [https://web-tech.maaz.codes](https://web-tech.maaz.codes)
+
 A fictional dev-tool SaaS (API rate limiting & abuse protection), built as a fully
 static website with **HTML, CSS and JavaScript only** - no framework, no backend,
 no build step.
