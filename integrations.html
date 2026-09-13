@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Integrations - ThrottleBox works with your stack</title>
+    <meta
+      name="description"
+      content="Browse ThrottleBox integrations for gateways, frameworks and languages. Filter by category and open any card for a copy-paste setup snippet."
+    />
+    <meta property="og:title" content="ThrottleBox integrations" />
+    <meta
+      property="og:description"
+      content="Eight integrations across infrastructure, frameworks and languages, each with a setup snippet."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <site-nav></site-nav>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Integrations</p>
+            <h1>Plug into what you already run.</h1>
+            <p class="lede">
+              Eight official integrations, each with a setup snippet you can paste in. Filter by
+              category, then click any card for the code and live status.
+            </p>
+          </div>
+
+          <div class="filters" data-filter-group="integration-grid" data-empty-message="no-results" role="group" aria-label="Filter integrations">
+            <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-btn" type="button" data-filter="languages" aria-pressed="false">Languages</button>
+            <button class="filter-btn" type="button" data-filter="frameworks" aria-pressed="false">Frameworks</button>
+            <button class="filter-btn" type="button" data-filter="infra" aria-pressed="false">Infrastructure</button>
+          </div>
+
+          <div class="integration-grid" id="integration-grid">
+            <button class="integration-card" type="button" data-key="nimbus" data-category="infra">
+              <span class="integration-card__top"><span class="monogram">NB</span><strong>Nimbus</strong></span>
+              <p>Serverless edge platform - wrap any function with a policy.</p>
+              <span class="status-row"><span class="status-dot"></span> Operational</span>
+            </button>
+
+            <button class="integration-card" type="button" data-key="orbitly" data-category="frameworks">
+              <span class="integration-card__top"><span class="monogram">OR</span><strong>Orbitly</strong></span>
+              <p>Full-stack JS framework - one plugin line in the config.</p>
+              <span class="status-row"><span class="status-dot"></span> Operational</span>
+            </button>
+
+            <button class="integration-card" type="button" data-key="ledgerly" data-category="infra">
+              <span class="integration-card__top"><span class="monogram">LG</span><strong>Ledgerly</strong></span>
+              <p>Billing platform - limits follow the customer's subscription tier.</p>
+              <span class="status-row"><span class="status-dot status-dot--degraded"></span> Degraded</span>
+            </button>
+
+            <button class="integration-card" type="button" data-key="wavepoint" data-category="infra">
+              <span class="integration-card__top"><span class="monogram">WP</span><strong>Wavepoint</strong></span>
+              <p>API gateway - install as a pre-routing filter.</p>
+              <span class="status-row"><span class="status-dot"></span> Operational</span>
+            </button>
+
+            <button class="integration-card" type="button" data-key="cronly" data-category="infra">
+              <span class="integration-card__top"><span class="monogram">CR</span><strong>Cronly</strong></span>
+              <p>Scheduled jobs - give batch workloads their own burst budget.</p>
+              <span class="status-row"><span class="status-dot"></span> Operational</span>
+            </button>
+
+            <button class="integration-card" type="button" data-key="fluxbase" data-category="infra frameworks">
+              <span class="integration-card__top"><span class="monogram">FB</span><strong>Fluxbase</strong></span>
+              <p>Database and auth - key limits by authenticated user id.</p>
+              <span class="status-row"><span class="status-dot"></span> Operational</span>
+            </button>
+
+            <button class="integration-card" type="button" data-key="ionpath" data-category="languages">
+              <span class="integration-card__top"><span class="monogram">IP</span><strong>Ionpath</strong></span>
+              <p>Typed RPC for Go - native interceptor, no HTTP assumptions.</p>
+              <span class="status-row"><span class="status-dot"></span> Operational</span>
+            </button>
+
+            <button class="integration-card" type="button" data-key="stackwell" data-category="languages frameworks">
+              <span class="integration-card__top"><span class="monogram">SW</span><strong>Stackwell</strong></span>
+              <p>Python toolkit - ASGI middleware with async evaluation.</p>
+              <span class="status-row"><span class="status-dot status-dot--down"></span> Maintenance</span>
+            </button>
+          </div>
+
+          <p id="no-results" class="is-hidden" style="margin-top: var(--s-6)">
+            Nothing in that category yet - tell us what you need and we will build it.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cta-banner">
+            <h2>Using something else?</h2>
+            <p>The REST API works anywhere, and we build one new integration a month by request.</p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="docs.html#endpoints">See the API</a>
+              <a class="btn btn--secondary" href="contact.html">Request an integration</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- shared detail modal, filled by integrations.js -->
+    <div class="modal" id="integration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">&times;</button>
+        <h2 id="modal-title">Integration</h2>
+        <p id="modal-meta" style="display: flex; gap: var(--s-2); flex-wrap: wrap"></p>
+        <p id="modal-blurb"></p>
+        <h3>How to integrate</h3>
+        <pre class="code-block"><code id="modal-code"></code></pre>
+        <div style="margin-top: var(--s-6); display: flex; gap: var(--s-3); flex-wrap: wrap">
+          <a class="btn btn--primary btn--sm" href="docs.html#quickstart">Full quickstart</a>
+          <button class="btn btn--secondary btn--sm" type="button" data-modal-close>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <site-footer></site-footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/filter-buttons.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/integrations.js"></script>
+  </body>
+</html>
