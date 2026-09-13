@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Changelog - what shipped in ThrottleBox</title>
+    <meta
+      name="description"
+      content="Every ThrottleBox release, newest first, tagged Added, Changed or Fixed. Filter the list to see only the kind of change you care about."
+    />
+    <meta property="og:title" content="ThrottleBox changelog" />
+    <meta
+      property="og:description"
+      content="Release notes for ThrottleBox, tagged Added, Changed and Fixed, newest first."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <site-nav></site-nav>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Changelog</p>
+            <h1>What shipped, and when.</h1>
+            <p class="lede">
+              Newest first, in Keep a Changelog format. Filter by the kind of change - the same
+              filter code that powers the integrations grid.
+            </p>
+          </div>
+
+          <div class="filters" data-filter-group="release-list" data-empty-message="no-releases" role="group" aria-label="Filter releases">
+            <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-btn" type="button" data-filter="added" aria-pressed="false">Added</button>
+            <button class="filter-btn" type="button" data-filter="changed" aria-pressed="false">Changed</button>
+            <button class="filter-btn" type="button" data-filter="fixed" aria-pressed="false">Fixed</button>
+          </div>
+
+          <div id="release-list">
+            <article class="release" data-category="added fixed">
+              <header>
+                <time datetime="2026-09-02">2 Sep 2026</time>
+                <p class="mono" style="font-size: 0.78rem">v2.7.0</p>
+              </header>
+              <div>
+                <div class="change-group">
+                  <span class="pill pill--added">Added</span>
+                  <ul>
+                    <li>Per-endpoint rate limit overrides, editable without a policy push</li>
+                    <li>Usage export to S3-compatible storage on Enterprise</li>
+                  </ul>
+                </div>
+                <div class="change-group">
+                  <span class="pill pill--fixed">Fixed</span>
+                  <ul>
+                    <li>Dashboard traffic chart rendering incorrectly in Safari 17</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="release" data-category="changed">
+              <header>
+                <time datetime="2026-07-18">18 Jul 2026</time>
+                <p class="mono" style="font-size: 0.78rem">v2.6.0</p>
+              </header>
+              <div>
+                <div class="change-group">
+                  <span class="pill pill--changed">Changed</span>
+                  <ul>
+                    <li>Default strategy for new policies is now sliding-window, not fixed-window</li>
+                    <li>Decision logs retained 90 days on Pro, up from 30</li>
+                    <li><code>tb policy push</code> now defaults to monitor mode unless told otherwise</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="release" data-category="added changed">
+              <header>
+                <time datetime="2026-05-05">5 May 2026</time>
+                <p class="mono" style="font-size: 0.78rem">v2.5.0</p>
+              </header>
+              <div>
+                <div class="change-group">
+                  <span class="pill pill--added">Added</span>
+                  <ul>
+                    <li>Anomaly alerts delivered to Slack and generic webhooks</li>
+                    <li>Ionpath and Stackwell integrations</li>
+                  </ul>
+                </div>
+                <div class="change-group">
+                  <span class="pill pill--changed">Changed</span>
+                  <ul>
+                    <li>Edge footprint expanded from 26 to 38 regions</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="release" data-category="fixed">
+              <header>
+                <time datetime="2026-03-21">21 Mar 2026</time>
+                <p class="mono" style="font-size: 0.78rem">v2.4.2</p>
+              </header>
+              <div>
+                <div class="change-group">
+                  <span class="pill pill--fixed">Fixed</span>
+                  <ul>
+                    <li>Burst allowance occasionally reset early across region failover</li>
+                    <li><code>RateLimit-Reset</code> rounded down instead of up on sub-second windows</li>
+                    <li>CLI login loop on Windows terminals without a default browser</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="release" data-category="added">
+              <header>
+                <time datetime="2026-01-14">14 Jan 2026</time>
+                <p class="mono" style="font-size: 0.78rem">v2.4.0</p>
+              </header>
+              <div>
+                <div class="change-group">
+                  <span class="pill pill--added">Added</span>
+                  <ul>
+                    <li>Monitor-only mode for every policy, with a "would have blocked" report</li>
+                    <li>Self-hosted container general availability</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p id="no-releases" class="is-hidden" style="margin-top: var(--s-6)">
+            No releases with that tag yet.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/filter-buttons.js"></script>
+  </body>
+</html>
