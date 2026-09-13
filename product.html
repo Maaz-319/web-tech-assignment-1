@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product &amp; pricing - ThrottleBox rate limiting plans</title>
+    <meta
+      name="description"
+      content="Explore ThrottleBox features, compare Free, Pro and Enterprise plans with monthly or yearly billing, and read answers to the six questions teams ask before buying."
+    />
+    <meta property="og:title" content="ThrottleBox product and pricing" />
+    <meta
+      property="og:description"
+      content="Per-key limits, live traffic visibility and instant overrides. Free, Pro at $29/mo, or Enterprise."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <site-nav></site-nav>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Product</p>
+            <h1>Everything you need to keep your API yours.</h1>
+            <p class="lede">
+              Three capabilities do most of the work: precise limits, honest visibility, and the
+              ability to change your mind instantly when a real customer gets caught.
+            </p>
+          </div>
+
+          <!-- FEATURE DEEP DIVE -->
+          <div class="split">
+            <div>
+              <p class="eyebrow">01 - Limits</p>
+              <h2>Limits that understand your plans</h2>
+              <p>
+                Define a policy per plan tier, per endpoint, or per individual API key. Burst
+                allowances let a client spend ahead briefly and repay it, which is how real
+                traffic behaves - batch jobs are bursty, and blocking them is not protection, it
+                is an outage you caused.
+              </p>
+              <ul style="color: var(--muted); font-size: var(--fs-small)">
+                <li>Fixed window, sliding window and token bucket strategies</li>
+                <li>Per-key overrides applied in under five seconds</li>
+                <li>Standard <code>RateLimit-*</code> response headers out of the box</li>
+              </ul>
+            </div>
+            <figure class="split__media photo-overlay" style="margin: 0">
+              <img src="images/stock/fiber.jpg" alt="Glowing fibre optic strands" width="1024" height="680" loading="lazy" />
+            </figure>
+          </div>
+
+          <div class="split split--reverse">
+            <div>
+              <p class="eyebrow">02 - Visibility</p>
+              <h2>Know who, what and when</h2>
+              <p>
+                Every decision is logged with the key, endpoint, region and the rule that matched.
+                Filter to rejected requests and you have the abuse report already written. Export
+                to your own warehouse if you would rather query it yourself.
+              </p>
+              <ul style="color: var(--muted); font-size: var(--fs-small)">
+                <li>Live traffic view with one-minute granularity</li>
+                <li>Anomaly alerts to Slack, email or webhook</li>
+                <li>90 days of retained decision logs on Pro</li>
+              </ul>
+            </div>
+            <figure class="split__media photo-overlay" style="margin: 0">
+              <img src="images/stock/dashboard.jpg" alt="Analytics chart of API request volume" width="1024" height="820" loading="lazy" />
+            </figure>
+          </div>
+
+          <div class="split">
+            <div>
+              <p class="eyebrow">03 - Control</p>
+              <h2>Drop it in without a rewrite</h2>
+              <p>
+                Use the DNS proxy for zero code changes, or the middleware package if you want
+                limits evaluated inside your own process. Same policy file either way.
+              </p>
+              <div class="snippet" data-snippet style="margin-top: var(--s-6)">
+                <div class="snippet__bar" role="tablist" aria-label="Integration language">
+                  <button class="tab" role="tab" type="button" data-lang="node" aria-selected="true">Node</button>
+                  <button class="tab" role="tab" type="button" data-lang="python" aria-selected="false">Python</button>
+                  <button class="tab" role="tab" type="button" data-lang="go" aria-selected="false">Go</button>
+                  <button class="btn btn--secondary btn--sm copy-btn" type="button" data-copy>Copy</button>
+                </div>
+                <div class="snippet__body">
+<pre class="code-block" data-pane="node"><code><span class="tok-com">// Express middleware</span>
+<span class="tok-key">import</span> { throttlebox } <span class="tok-key">from</span> <span class="tok-str">"@throttlebox/express"</span>;
+
+app.use(throttlebox({
+  key: <span class="tok-str">"api_key"</span>,
+  policy: <span class="tok-str">"public-api"</span>
+}));</code></pre>
+<pre class="code-block is-hidden" data-pane="python"><code><span class="tok-com"># FastAPI middleware</span>
+<span class="tok-key">from</span> throttlebox <span class="tok-key">import</span> ThrottleBox
+
+app.add_middleware(
+    ThrottleBox,
+    key=<span class="tok-str">"api_key"</span>,
+    policy=<span class="tok-str">"public-api"</span>,
+)</code></pre>
+<pre class="code-block is-hidden" data-pane="go"><code><span class="tok-com">// net/http handler</span>
+tb := throttlebox.New(throttlebox.Config{
+    Key:    <span class="tok-str">"api_key"</span>,
+    Policy: <span class="tok-str">"public-api"</span>,
+})
+
+http.Handle(<span class="tok-str">"/v1/"</span>, tb.Wrap(apiHandler))</code></pre>
+                </div>
+              </div>
+            </div>
+            <figure class="split__media photo-overlay" style="margin: 0">
+              <img src="images/stock/terminal.jpg" alt="Terminal showing streaming logs" width="1024" height="680" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="section section--tight" id="pricing">
+        <div class="container">
+          <div class="section-head" style="text-align: center; margin-inline: auto">
+            <p class="eyebrow">Pricing</p>
+            <h2>Pay for traffic, not seats.</h2>
+          </div>
+
+          <div class="toggle-row">
+            <span id="label-monthly">Monthly</span>
+            <button
+              class="switch"
+              id="billing-toggle"
+              type="button"
+              role="switch"
+              aria-checked="false"
+              aria-labelledby="label-monthly label-yearly"
+            >
+              <span class="visually-hidden">Toggle yearly billing</span>
+            </button>
+            <span id="label-yearly">Yearly</span>
+            <span class="pill pill--accent is-hidden" id="save-note">Save ~20%</span>
+          </div>
+
+          <div class="pricing">
+            <article class="card tier">
+              <h3>Free</h3>
+              <p style="font-size: var(--fs-small)">Side projects and testing.</p>
+              <p class="tier__price" data-plan="free">$0</p>
+              <p class="tier__per" data-per="free">per month, billed monthly</p>
+              <ul>
+                <li>100,000 requests / month</li>
+                <li>1 policy, 1 environment</li>
+                <li>7 days of decision logs</li>
+                <li>Community support</li>
+              </ul>
+              <a class="btn btn--secondary" href="docs.html#quickstart">Start free</a>
+            </article>
+
+            <article class="card tier tier--featured">
+              <span class="pill pill--accent tier__tag">Recommended</span>
+              <h3>Pro</h3>
+              <p style="font-size: var(--fs-small)">Growing APIs with paying customers.</p>
+              <p class="tier__price" data-plan="pro">$29</p>
+              <p class="tier__per" data-per="pro">per month, billed monthly</p>
+              <ul>
+                <li>10 million requests / month</li>
+                <li>Unlimited policies and environments</li>
+                <li>90 days of decision logs</li>
+                <li>Anomaly alerts and per-key overrides</li>
+                <li>Email support, 1 business day</li>
+              </ul>
+              <a class="btn btn--primary" href="contact.html">Start 14-day trial</a>
+            </article>
+
+            <article class="card tier">
+              <h3>Enterprise</h3>
+              <p style="font-size: var(--fs-small)">High volume and compliance needs.</p>
+              <p class="tier__price" data-plan="enterprise">Custom</p>
+              <p class="tier__per" data-per="enterprise">talk to us</p>
+              <ul>
+                <li>Unlimited requests, committed rate</li>
+                <li>Self-hosted or dedicated region</li>
+                <li>SSO, audit log, data residency</li>
+                <li>99.99% SLA with credits</li>
+                <li>Shared Slack channel</li>
+              </ul>
+              <a class="btn btn--secondary" href="contact.html">Contact sales</a>
+            </article>
+          </div>
+
+          <!-- COMPARISON TABLE -->
+          <div class="table-wrap" style="margin-top: var(--s-12)">
+            <table>
+              <caption>Feature comparison across plans</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">Free</th>
+                  <th scope="col">Pro</th>
+                  <th scope="col">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Monthly requests</th>
+                  <td>100K</td>
+                  <td>10M</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <th scope="row">Policies</th>
+                  <td>1</td>
+                  <td>Unlimited</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <th scope="row">Log retention</th>
+                  <td>7 days</td>
+                  <td>90 days</td>
+                  <td>Custom</td>
+                </tr>
+                <tr>
+                  <th scope="row">Anomaly alerts</th>
+                  <td class="no">-</td>
+                  <td class="yes">Included</td>
+                  <td class="yes">Included</td>
+                </tr>
+                <tr>
+                  <th scope="row">Self-hosted option</th>
+                  <td class="no">-</td>
+                  <td class="no">-</td>
+                  <td class="yes">Included</td>
+                </tr>
+                <tr>
+                  <th scope="row">Support</th>
+                  <td>Community</td>
+                  <td>Email, 1 day</td>
+                  <td>Shared Slack, SLA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <aside class="section section--tight" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">The six things teams ask before buying.</h2>
+          </div>
+          <div class="accordion" data-accordion>
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-1">
+                  Can I switch between monthly and yearly billing later?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="faq-1">
+                Yes, at any time. Switching to yearly credits the unused part of your current
+                month; switching back takes effect at the end of the paid term.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-2">
+                  What happens if I go over my request quota?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="faq-2">
+                Nothing breaks. Traffic keeps flowing and overage is billed at $2 per additional
+                million requests. We email you at 80% and 100% of your included volume.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-3">
+                  Can we self-host ThrottleBox?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="faq-3">
+                On Enterprise, yes - a single container plus a Redis-compatible store, with the
+                same policy format and an optional read-only sync to the hosted dashboard.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-4">
+                  Where is our traffic data stored?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="faq-4">
+                Decisions are evaluated at the nearest edge region, and logs are stored in the
+                region you pick at signup: EU, US or Asia-Pacific. Enterprise can pin a single
+                region and disable cross-region replication entirely.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-5">
+                  How do we cancel?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="faq-5">
+                One button in the dashboard, no call required. Your policies stay exportable for
+                30 days after cancellation so nothing is held hostage.
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 style="margin: 0">
+                <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-6">
+                  What is the SLA, and what happens if you miss it?
+                  <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="faq-6">
+                Enterprise carries a 99.99% monthly SLA. Below that you get service credits
+                automatically, without filing a claim. If our edge is unreachable, traffic
+                fails open by default - your API stays up, unprotected, rather than going dark.
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cta-banner">
+            <h2>Try it on your busiest endpoint.</h2>
+            <p>Monitor-only mode means you can see the verdict before anything gets blocked.</p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="docs.html#quickstart">Start in 5 minutes</a>
+              <a class="btn btn--secondary" href="integrations.html">Browse integrations</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/pricing.js"></script>
+    <script src="js/snippet-tabs.js"></script>
+    <script src="js/faq-accordion.js"></script>
+  </body>
+</html>
